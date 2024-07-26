@@ -1,6 +1,6 @@
 # App Capstone Backend
 
-    This is final project for Udacity's FullStack Web Developer Nanodegree. Web app can be accessed at URL: https://udacity-fullstack-capstone-1.onrender.com/
+    This is final project for Udacity's FullStack Web Developer Nanodegree. Web app can be accessed at URL: https://udacity-capstone-baopth-292506db64c8.herokuapp.com/
 
 ## Installation instructions
 
