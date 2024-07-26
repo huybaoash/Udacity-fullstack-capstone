@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-db_url = os.getenv('DATABASE_URL')
+db_url = os.getenv('HEROKU_POSTGRESQL_BROWN_URL')
 
 db_name = os.getenv('DB_NAME')
 db_user = os.getenv('DB_USER')
