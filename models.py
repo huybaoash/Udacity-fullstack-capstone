@@ -18,12 +18,12 @@ def setup_db(app):
         db.create_all()
 
 
-class Scene(db.Model):
-    __tablename__ = 'scenes'
+class Movie(db.Model):
+    __tablename__ = 'movies'
     id = Column(Integer(), primary_key=True)
     title = Column(String())
     duration = Column(Integer())
-    characters = db.relationship('Character', backref='scene',
+    actors = db.relationship('Actor', backref='movie',
                                  cascade="all, delete-orphan")
 
     def insert(self):
@@ -45,12 +45,12 @@ class Scene(db.Model):
         }
 
 
-class Character(db.Model):
-    __tablename__ = 'characters'
+class Actor(db.Model):
+    __tablename__ = 'actors'
     id = Column(Integer(), primary_key=True)
     name = Column(String())
     role = Column(String())
-    scene_id = db.Column(db.Integer, db.ForeignKey('scenes.id'), nullable=False)
+    movie_id = db.Column(db.Integer, db.ForeignKey('movies.id'), nullable=False)
 
     def insert(self):
         db.session.add(self)
@@ -68,5 +68,5 @@ class Character(db.Model):
             'id': self.id,
             'name': self.name,
             'role': self.role,
-            'scene_id': self.scene_id
+            'movie_id': self.movie_id
         }

@@ -21,23 +21,23 @@
 			]
 		},
 		{
-			"name": "Supporter",
+			"name": "Casting Assistant",
 			"item": [
 				{
-					"name": "get scenes",
+					"name": "get movies",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{host}}/scenes"
+						"url": "{{host}}/movies"
 					},
 					"response": []
 				},
 				{
-					"name": "get characters",
+					"name": "get actors",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{host}}/characters"
+						"url": "{{host}}/actors"
 					},
 					"response": []
 				}
@@ -45,7 +45,7 @@
 			"auth": {
 				"type": "bearer",
 				"bearer": {
-					"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwNTg3NDM4NDE4NTA3OTk1MzQ0NyIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMTA1MzgsImV4cCI6MTgyMjAxNzczOCwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbInZpZXc6Y2hhcmFjdGVycyIsInZpZXc6c2NlbmVzIl19.eKqdAGtvzAq1-L1k_DkM3RrOJblprpkOpjiCfkZAUmynbXT2hivJb0SUJXHZpuRUIN4PXejLCajvc4zc4EwbIcTgdMpm3tiGu06SGEhnq578AL7RmFZcQC8Q2uIDVsFTqmU1mVfV8zcfjhYNJwsOPpYAmHYvo_9RPudzoId1KDBwftE0Id2iXNkBtFrR0zNviSr2WWaIA1Balsi71njZzDbYu5DuQ_nEuwmnnpTashx5QR7hFsMFSz2K3ha-pWfOagr2bXmMxx2Md_Md900acg1GCLA732f5cWV-g75ucYGmHohqNjDfC1pitXTpkMR2xubHhzl_vLXbot7E4jJA8Q"
+					"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwNTg3NDM4NDE4NTA3OTk1MzQ0NyIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMjM3MTQsImV4cCI6MTcyMjAzMDkxNCwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.gFZhgd4_8__J9F_RjnQJUB1bA3scITNPR6wA0lH31_AaUe_rfvJvyqa5c3eH1cL5VtXOSApbXrJJm3qAx2gOnP9BvdOY9Cp8pwnCoCxs63nvjyyD2ds6HrYGyrhs7fdWuHysZjf_e7jwSxN8pjdDRVALlZ0k6mVpsqe9gsNMt0RiudMhCrMKCrDFGCyFhC2DH5ofqcc7zHrCIrpXgSJ5CtVC9qV0qgSL6P4HgaW6eUlqeh1eZatKtn_rMbPCbkC9fxqw6d1LRfHuo-FPM7GJmRlOrf4K0o7U6Aj_hDtCCIB4vv2zlF-8JQ_5BoQe_tZtTyoOv7s9x4VhxzV2BuMUZA"
 				}
 			},
 			"event": [
@@ -72,86 +72,86 @@
 			]
 		},
 		{
-			"name": "Manager",
+			"name": "Casting Director",
 			"item": [
 				{
-					"name": "get scenes",
+					"name": "get movies",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{host}}/scenes"
+						"url": "{{host}}/movies"
 					},
 					"response": []
 				},
 				{
-					"name": "get characters",
+					"name": "get actors",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "localhost:5000/characters"
+						"url": "localhost:5000/actors"
 					},
 					"response": []
 				},
 				{
-					"name": "add character",
+					"name": "add actor",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"character name\",\r\n    \"role\": \"protagonist\",\r\n    \"scene_id\": 1\r\n}",
+							"raw": "{\r\n    \"name\": \"actor name\",\r\n    \"role\": \"protagonist\",\r\n    \"movie_id\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{host}}/characters/add"
+						"url": "{{host}}/actors/add"
 					},
 					"response": []
 				},
 				{
-					"name": "delete character",
+					"name": "delete actor",
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{host}}/characters/2/delete"
+						"url": "{{host}}/actors/2/delete"
 					},
 					"response": []
 				},
 				{
-					"name": "update scene",
+					"name": "update movie",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\" : \"update scene\",\r\n    \"duration\" : 230\r\n}",
+							"raw": "{\r\n    \"title\" : \"update movie\",\r\n    \"duration\" : 230\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:5000/scenes/1/update"
+						"url": "localhost:5000/movies/1/update"
 					},
 					"response": []
 				},
 				{
-					"name": "update character",
+					"name": "update actor",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"update character\",\r\n    \"role\" : \"antagonist\",\r\n    \"scene_id\" : 1\r\n}",
+							"raw": "{\r\n    \"name\" : \"update actor\",\r\n    \"role\" : \"antagonist\",\r\n    \"movie_id\" : 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "localhost:5000/characters/3/update"
+						"url": "localhost:5000/actors/3/update"
 					},
 					"response": []
 				}
@@ -159,7 +159,7 @@
 			"auth": {
 				"type": "bearer",
 				"bearer": {
-					"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMzk1NDA1MTI1NjE4MjYxNDkzNSIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMTEzNzcsImV4cCI6MTgyMjAxODU3Nywic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbImFkZDpjaGFyYWN0ZXJzIiwiZGVsZXRlOmNoYXJhY3RlcnMiLCJ1cGRhdGU6Y2hhcmFjdGVycyIsInVwZGF0ZTpzY2VuZXMiLCJ2aWV3OmNoYXJhY3RlcnMiLCJ2aWV3OnNjZW5lcyJdfQ.QNs6TAm5sjhDZYRuzCRNVIkM1dF8gyajB7WyPW4Yvdb17d1S5Vwes29s5HWubYKmbqerTjwEI8Wqo9PLd21OS6w9Jt5onmv3l4I_SZ--D3UfGWrbgyBYL_9amrdyHQ9SrTu53rGJZUm74KGYpD-lNSRpVSFpHg5Im0uhdKn3mdQ0s0AyNgWPWjmk1DJTF7dj5Zr2KXFzBxwahMuuDTqXJR8jlzdytRSEM8H7RhU2-R69rI27IIAyTSJv2DglOHiavWhjounud-Cml8gI-m8x5deZhdxlctJs0OlylG9pDSHJJJfMlDO1nBLfem4QdZaCXZdWLVj6lsR_Yiam6Lvw7A"
+					"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMzk1NDA1MTI1NjE4MjYxNDkzNSIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMjM3ODYsImV4cCI6MTcyMjAzMDk4Niwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbXX0.ZfjfKLDEip7Z33WzuRJPgwhROrRdfs14-3RppWm700lkc9km-sucJrVmmrp_Io3sKIYoci5xUc89enusbJ2nBYsqTOlR5VmbrRk84JGQ6dYjNjxOLn1r-TQxUHXWGRjpSJdZpOh1JFCcBaSC_xUysE-k8Gh4G0VA4yzpj8ijo2cCRa6j8RnmihgC16dabwR3J6Tq6IvBtc_c8eVtcq38Klrs0nz_A8turQ4cZuGnewNTJycKljzYTkiJg6hFT7Q7FleaxpD2hCub9tQ2pmqdUNb1zMNm1vkCDGnlOBweBNqAGTwXdnDx-VW30H65GaX-_I7fdi9msB1pz4zKIU_hZg"
 				}
 			},
 			"event": [
@@ -186,113 +186,113 @@
 			]
 		},
 		{
-			"name": "Producer",
+			"name": "Executive Producer",
 			"item": [
 				{
-					"name": "get scenes",
+					"name": "get movies",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{host}}/scenes"
+						"url": "{{host}}/movies"
 					},
 					"response": []
 				},
 				{
-					"name": "get characters",
+					"name": "get actors",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": "{{host}}/characters"
+						"url": "{{host}}/actors"
 					},
 					"response": []
 				},
 				{
-					"name": "add character",
+					"name": "add actor",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"character name\",\r\n    \"role\": \"support character\",\r\n    \"scene_id\": 1\r\n}",
+							"raw": "{\r\n    \"name\": \"actor name\",\r\n    \"role\": \"support actor\",\r\n    \"movie_id\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{host}}/characters/add"
+						"url": "{{host}}/actors/add"
 					},
 					"response": []
 				},
 				{
-					"name": "add scene",
+					"name": "add movie",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\" : \"add scene\",\r\n    \"duration\" : 180\r\n}",
+							"raw": "{\r\n    \"title\" : \"add movie\",\r\n    \"duration\" : 180\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{host}}/scenes/add"
+						"url": "{{host}}/movies/add"
 					},
 					"response": []
 				},
 				{
-					"name": "delete character",
+					"name": "delete actor",
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{host}}/characters/2/delete"
+						"url": "{{host}}/actors/2/delete"
 					},
 					"response": []
 				},
 				{
-					"name": "delete scene",
+					"name": "delete movie",
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": "{{host}}/scenes/2/delete"
+						"url": "{{host}}/movies/2/delete"
 					},
 					"response": []
 				},
 				{
-					"name": "update scene",
+					"name": "update movie",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\" : \"update scene\",\r\n    \"duration\" : 367\r\n}",
+							"raw": "{\r\n    \"title\" : \"update movie\",\r\n    \"duration\" : 367\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{host}}/scenes/1/update"
+						"url": "{{host}}/movies/1/update"
 					},
 					"response": []
 				},
 				{
-					"name": "update character",
+					"name": "update actor",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"update character\",\r\n    \"role\" : \"side character\",\r\n    \"scene_id\" : 1\r\n}",
+							"raw": "{\r\n    \"name\" : \"update actor\",\r\n    \"role\" : \"side actor\",\r\n    \"movie_id\" : 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
-						"url": "{{host}}/characters/3/update"
+						"url": "{{host}}/actors/3/update"
 					},
 					"response": []
 				}
@@ -300,7 +300,7 @@
 			"auth": {
 				"type": "bearer",
 				"bearer": {
-					"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwNTM4MTAzMzQ4MDc4MzE0NjQ3MiIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMTE2MjEsImV4cCI6MTgyMjAxODgyMSwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbImFkZDpjaGFyYWN0ZXJzIiwiYWRkOnNjZW5lcyIsImRlbGV0ZTpjaGFyYWN0ZXJzIiwiZGVsZXRlOnNjZW5lcyIsInVwZGF0ZTpjaGFyYWN0ZXJzIiwidXBkYXRlOnNjZW5lcyIsInZpZXc6Y2hhcmFjdGVycyIsInZpZXc6c2NlbmVzIl19.m5w4iDQschRfY6xXTMXq49CYG--XcKAaUO0ERTm_2w-k8LswuIWe0WeYB9o1fLmVE31J3TDKtwv-ciT7DhMs-3tmQ5hZgUfAMtrMse9MlBScO3yIrSphcmk5VSTgFQbK1neJE9ar3JGE9SVVjwSHgfmq60eSc76hxoTGrFntv6OjyeEgpBbEpdLJxIDm9fipSQmCTImkh3d0NKA-IlYn2GcdM4mJ6ny7-Gc51lUCZ7cQP8Ow3q4I4Q5qKASBPK-2-ebYBk9ZFar-u3YB7sE7cxwQmjlEuE5fube_-lNONnYMjo445E_aRLgxUx5_cdVHWosofVx6p2Qq9akbILaQ_Q"
+					"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwNTM4MTAzMzQ4MDc4MzE0NjQ3MiIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMjM4MjgsImV4cCI6MTcyMjAzMTAyOCwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbXX0.UDUij_b1GpmQdC6jMKnODoFOY68LH_hEuAEimv10LDGS_dJnOLbN5oDRUIyxA2o15dafvyKS3NZXpsrLAHpXraiBxGrcnyqShjD1ulIFXU0kXa9XLKPU6Zrxefg9BXpwlf3G2HtO8A5eiYqe6zvkURFr8TNjdokeAIxBvfEffT_LXQLaQS90ohLuydM_LtoR9RTaU_WEYF2M6p7gdAZNumeUrFC-ZMILvz4B5f-bA8LNKbf--soW4Y8d5WOWLDFRa61wpwfxR-UK9-SwOMLUm_TAphyhw5blI3MYbDLTFa9z_Kb0OooslX-0s5R7cRHr0_2ec5KWZqjM8Fpx-nP0bA"
 				}
 			},
 			"event": [

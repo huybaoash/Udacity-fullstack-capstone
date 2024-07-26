@@ -12,18 +12,18 @@ class TestCase(unittest.TestCase):
         self.client = self.app.test_client
         setup_db(self.app)
 
-        self.dummy_scene1 = {
+        self.dummy_movie1 = {
             'title': 'Dummy Title 1',
             'duration': 123
         }
-        self.dummy_scene2 = {
+        self.dummy_movie2 = {
             'title': 'Dummy Title 2',
             'duration': 231
         }
-        self.dummy_character = {
+        self.dummy_actor = {
             'name': 'Dummy Name',
             'role': 'antagonist',
-            'scene_id': 2
+            'movie_id': 2
         }
         with self.app.app_context():
             self.db = SQLAlchemy()
@@ -34,24 +34,24 @@ class TestCase(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_get_scenes(self):
-        response = self.client().get('/scenes')
+    def test_get_movies(self):
+        response = self.client().get('/movies')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], True)
-        self.assertEqual(data['message'], 'Get scenes successfully')
-        self.assertTrue(data['scenes'])
+        self.assertEqual(data['message'], 'Get movies successfully')
+        self.assertTrue(data['movies'])
 
-    def test_add_scene(self):
-        response = self.client().post('/scenes/add', json=self.dummy_scene1)
+    def test_add_movie(self):
+        response = self.client().post('/movies/add', json=self.dummy_movie1)
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], True)
-        self.assertEqual(data['message'], 'Add scene successfully')
-        self.assertTrue(data['scene'])
+        self.assertEqual(data['message'], 'Add movie successfully')
+        self.assertTrue(data['movie'])
 
-    def test_add_scene_fail(self):
-        response = self.client().post('/scenes/add', json={
+    def test_add_movie_fail(self):
+        response = self.client().post('/movies/add', json={
             'title': 'Dummy'
         })
         data = json.loads(response.data)
@@ -60,18 +60,18 @@ class TestCase(unittest.TestCase):
         self.assertEqual(data['error'], 422)
         self.assertEqual(data['message'], 'Unprocessable')
 
-    def test_update_scene(self):
-        response = self.client().patch('/scenes/1/update', json={
+    def test_update_movie(self):
+        response = self.client().patch('/movies/1/update', json={
             'title': 'Test update name'
         })
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], True)
-        self.assertEqual(data['message'], 'Update scene successfully')
-        self.assertTrue(data['scene'])
+        self.assertEqual(data['message'], 'Update movie successfully')
+        self.assertTrue(data['movie'])
 
-    def test_update_scene_fail(self):
-        response = self.client().patch('/scenes/1000/update', json={
+    def test_update_movie_fail(self):
+        response = self.client().patch('/movies/1000/update', json={
             'title': 'Test update name'
         })
         data = json.loads(response.data)
@@ -80,40 +80,40 @@ class TestCase(unittest.TestCase):
         self.assertEqual(data['error'], 404)
         self.assertEqual(data['message'], 'Not found')
 
-    def test_delete_scene(self):
-        response = self.client().delete('/scenes/1/delete')
+    def test_delete_movie(self):
+        response = self.client().delete('/movies/1/delete')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], True)
-        self.assertEqual(data['message'], 'Delete scene successfully')
-        self.assertTrue(data['scene_id'])
+        self.assertEqual(data['message'], 'Delete movie successfully')
+        self.assertTrue(data['movie_id'])
 
-    def test_delete_scene_fail(self):
-        response = self.client().delete('/scenes/1000/delete')
+    def test_delete_movie_fail(self):
+        response = self.client().delete('/movies/1000/delete')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 404)
         self.assertEqual(data['status'], False)
         self.assertEqual(data['error'], 404)
         self.assertEqual(data['message'], 'Not found')
 
-    def test_get_character(self):
-        response = self.client().get('/characters')
+    def test_get_actor(self):
+        response = self.client().get('/actors')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], True)
-        self.assertEqual(data['message'], 'Get characters successfully')
-        self.assertTrue(data['characters'])
+        self.assertEqual(data['message'], 'Get actors successfully')
+        self.assertTrue(data['actors'])
 
-    def test_add_character(self):
-        response = self.client().post('/scenes/add', json=self.dummy_character)
+    def test_add_actor(self):
+        response = self.client().post('/movies/add', json=self.dummy_actor)
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], True)
-        self.assertEqual(data['message'], 'Add character successfully')
-        self.assertTrue(data['character'])
+        self.assertEqual(data['message'], 'Add actor successfully')
+        self.assertTrue(data['actor'])
 
-    def test_add_character_fail(self):
-        response = self.client().post('/characters/add', json={
+    def test_add_actor_fail(self):
+        response = self.client().post('/actors/add', json={
             'name': 'Dummy'
         })
         data = json.loads(response.data)
@@ -122,19 +122,19 @@ class TestCase(unittest.TestCase):
         self.assertEqual(data['error'], 422)
         self.assertEqual(data['message'], 'Unprocessable')
 
-    def test_update_character(self):
-        response = self.client().patch('/characters/1/update', json={
-            'name': 'Test update name character'
+    def test_update_actor(self):
+        response = self.client().patch('/actors/1/update', json={
+            'name': 'Test update name actor'
         })
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], True)
-        self.assertEqual(data['message'], 'Update character successfully')
-        self.assertTrue(data['character'])
+        self.assertEqual(data['message'], 'Update actor successfully')
+        self.assertTrue(data['actor'])
 
-    def test_update_character_fail(self):
-        response = self.client().patch('/characters/1000/update', json={
-            'title': 'Test update name character'
+    def test_update_actor_fail(self):
+        response = self.client().patch('/actors/1000/update', json={
+            'title': 'Test update name actor'
         })
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 404)
@@ -142,16 +142,16 @@ class TestCase(unittest.TestCase):
         self.assertEqual(data['error'], 404)
         self.assertEqual(data['message'], 'Not found')
 
-    def test_delete_character(self):
-        response = self.client().delete('/scenes/1/delete')
+    def test_delete_actor(self):
+        response = self.client().delete('/movies/1/delete')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data['status'], True)
-        self.assertEqual(data['message'], 'Delete character successfully')
-        self.assertTrue(data['character_id'])
+        self.assertEqual(data['message'], 'Delete actor successfully')
+        self.assertTrue(data['actor_id'])
 
-    def test_delete_character_fail(self):
-        response = self.client().delete('/characters/1000/delete')
+    def test_delete_actor_fail(self):
+        response = self.client().delete('/actors/1000/delete')
         data = json.loads(response.data)
         self.assertEqual(response.status_code, 404)
         self.assertEqual(data['status'], False)

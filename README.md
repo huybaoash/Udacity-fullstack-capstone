@@ -10,125 +10,125 @@
 
 ## Roles
 
-    Supporter
-        GET /characters and /scenes
-    Manager
-        GET /characters and /scenes
-        ADD /characters and DELETE /characters
-        PATCH /characters and /scenes
-    Producer
-        GET /characters and /scenes
-        ADD /characters and DELETE /characters
-        PATCH /characters and /scenes
-        ADD /scenes and DELETE /scenes
+    Casting Assistant
+        GET /actors and /movies
+    Casting Director
+        GET /actors and /movies
+        ADD /actors and DELETE /actors
+        PATCH /actors and /movies
+    Executive Producer
+        GET /actors and /movies
+        ADD /actors and DELETE /actors
+        PATCH /actors and /movies
+        ADD /movies and DELETE /movies
 
 ## JWT Token for each role
 
-    Supporter:
-        eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwNTg3NDM4NDE4NTA3OTk1MzQ0NyIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMTA1MzgsImV4cCI6MTgyMjAxNzczOCwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbInZpZXc6Y2hhcmFjdGVycyIsInZpZXc6c2NlbmVzIl19.eKqdAGtvzAq1-L1k_DkM3RrOJblprpkOpjiCfkZAUmynbXT2hivJb0SUJXHZpuRUIN4PXejLCajvc4zc4EwbIcTgdMpm3tiGu06SGEhnq578AL7RmFZcQC8Q2uIDVsFTqmU1mVfV8zcfjhYNJwsOPpYAmHYvo_9RPudzoId1KDBwftE0Id2iXNkBtFrR0zNviSr2WWaIA1Balsi71njZzDbYu5DuQ_nEuwmnnpTashx5QR7hFsMFSz2K3ha-pWfOagr2bXmMxx2Md_Md900acg1GCLA732f5cWV-g75ucYGmHohqNjDfC1pitXTpkMR2xubHhzl_vLXbot7E4jJA8Q
+    Casting Assistant:
+        eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwNTg3NDM4NDE4NTA3OTk1MzQ0NyIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMjM3MTQsImV4cCI6MTcyMjAzMDkxNCwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbInZpZXc6YWN0b3JzIiwidmlldzptb3ZpZXMiXX0.gFZhgd4_8__J9F_RjnQJUB1bA3scITNPR6wA0lH31_AaUe_rfvJvyqa5c3eH1cL5VtXOSApbXrJJm3qAx2gOnP9BvdOY9Cp8pwnCoCxs63nvjyyD2ds6HrYGyrhs7fdWuHysZjf_e7jwSxN8pjdDRVALlZ0k6mVpsqe9gsNMt0RiudMhCrMKCrDFGCyFhC2DH5ofqcc7zHrCIrpXgSJ5CtVC9qV0qgSL6P4HgaW6eUlqeh1eZatKtn_rMbPCbkC9fxqw6d1LRfHuo-FPM7GJmRlOrf4K0o7U6Aj_hDtCCIB4vv2zlF-8JQ_5BoQe_tZtTyoOv7s9x4VhxzV2BuMUZA
 
-    Manager:
-        eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMzk1NDA1MTI1NjE4MjYxNDkzNSIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMTEzNzcsImV4cCI6MTgyMjAxODU3Nywic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbImFkZDpjaGFyYWN0ZXJzIiwiZGVsZXRlOmNoYXJhY3RlcnMiLCJ1cGRhdGU6Y2hhcmFjdGVycyIsInVwZGF0ZTpzY2VuZXMiLCJ2aWV3OmNoYXJhY3RlcnMiLCJ2aWV3OnNjZW5lcyJdfQ.QNs6TAm5sjhDZYRuzCRNVIkM1dF8gyajB7WyPW4Yvdb17d1S5Vwes29s5HWubYKmbqerTjwEI8Wqo9PLd21OS6w9Jt5onmv3l4I_SZ--D3UfGWrbgyBYL_9amrdyHQ9SrTu53rGJZUm74KGYpD-lNSRpVSFpHg5Im0uhdKn3mdQ0s0AyNgWPWjmk1DJTF7dj5Zr2KXFzBxwahMuuDTqXJR8jlzdytRSEM8H7RhU2-R69rI27IIAyTSJv2DglOHiavWhjounud-Cml8gI-m8x5deZhdxlctJs0OlylG9pDSHJJJfMlDO1nBLfem4QdZaCXZdWLVj6lsR_Yiam6Lvw7A
-    Producer:
-        eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwNTM4MTAzMzQ4MDc4MzE0NjQ3MiIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMTE2MjEsImV4cCI6MTgyMjAxODgyMSwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbImFkZDpjaGFyYWN0ZXJzIiwiYWRkOnNjZW5lcyIsImRlbGV0ZTpjaGFyYWN0ZXJzIiwiZGVsZXRlOnNjZW5lcyIsInVwZGF0ZTpjaGFyYWN0ZXJzIiwidXBkYXRlOnNjZW5lcyIsInZpZXc6Y2hhcmFjdGVycyIsInZpZXc6c2NlbmVzIl19.m5w4iDQschRfY6xXTMXq49CYG--XcKAaUO0ERTm_2w-k8LswuIWe0WeYB9o1fLmVE31J3TDKtwv-ciT7DhMs-3tmQ5hZgUfAMtrMse9MlBScO3yIrSphcmk5VSTgFQbK1neJE9ar3JGE9SVVjwSHgfmq60eSc76hxoTGrFntv6OjyeEgpBbEpdLJxIDm9fipSQmCTImkh3d0NKA-IlYn2GcdM4mJ6ny7-Gc51lUCZ7cQP8Ow3q4I4Q5qKASBPK-2-ebYBk9ZFar-u3YB7sE7cxwQmjlEuE5fube_-lNONnYMjo445E_aRLgxUx5_cdVHWosofVx6p2Qq9akbILaQ_Q
+    Casting Director:
+        eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMzk1NDA1MTI1NjE4MjYxNDkzNSIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMjM3ODYsImV4cCI6MTcyMjAzMDk4Niwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbXX0.ZfjfKLDEip7Z33WzuRJPgwhROrRdfs14-3RppWm700lkc9km-sucJrVmmrp_Io3sKIYoci5xUc89enusbJ2nBYsqTOlR5VmbrRk84JGQ6dYjNjxOLn1r-TQxUHXWGRjpSJdZpOh1JFCcBaSC_xUysE-k8Gh4G0VA4yzpj8ijo2cCRa6j8RnmihgC16dabwR3J6Tq6IvBtc_c8eVtcq38Klrs0nz_A8turQ4cZuGnewNTJycKljzYTkiJg6hFT7Q7FleaxpD2hCub9tQ2pmqdUNb1zMNm1vkCDGnlOBweBNqAGTwXdnDx-VW30H65GaX-_I7fdi9msB1pz4zKIU_hZg
+    Executive Producer:
+        eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Il96SFJDQmh2YUJNRXBweURLQlVubSJ9.eyJpc3MiOiJodHRwczovL2Rldi1reXU1YWdoemlkNTZldnIxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwNTM4MTAzMzQ4MDc4MzE0NjQ3MiIsImF1ZCI6ImNhcHN0b25lLXVkYWNpdHkiLCJpYXQiOjE3MjIwMjM4MjgsImV4cCI6MTcyMjAzMTAyOCwic2NvcGUiOiIiLCJhenAiOiI5dGtpRjZtaG95QU51TTdmb2RwVTRUQ0hnVTR5OVdjeSIsInBlcm1pc3Npb25zIjpbXX0.UDUij_b1GpmQdC6jMKnODoFOY68LH_hEuAEimv10LDGS_dJnOLbN5oDRUIyxA2o15dafvyKS3NZXpsrLAHpXraiBxGrcnyqShjD1ulIFXU0kXa9XLKPU6Zrxefg9BXpwlf3G2HtO8A5eiYqe6zvkURFr8TNjdokeAIxBvfEffT_LXQLaQS90ohLuydM_LtoR9RTaU_WEYF2M6p7gdAZNumeUrFC-ZMILvz4B5f-bA8LNKbf--soW4Y8d5WOWLDFRa61wpwfxR-UK9-SwOMLUm_TAphyhw5blI3MYbDLTFa9z_Kb0OooslX-0s5R7cRHr0_2ec5KWZqjM8Fpx-nP0bA
 
 ## API Endpoints
 
     ### GET Enpoints
-        #### GET /scenes : Displays all scenes.
+        #### GET /movies : Displays all movies.
         Sample response:
             {
-                "message": "Get scenes successfully",
-                "scenes": [
+                "message": "Get movies successfully",
+                "movies": [
                     {
                     "id": 1,
                     "duration": 123,
-                    "title": "update scene"
+                    "title": "update movie"
                     }
                 ],
                 "status": true
             }
 
-        #### GET /characters: Displays all characters.
+        #### GET /actors: Displays all actors.
         Sample response:
             {
-                "characters": [
+                "actors": [
                     {
                         "role": "antagonist",
                         "id": 4,
-                        "scene_id": 1,
-                        "name": "character name"
+                        "movie_id": 1,
+                        "name": "actor name"
                     },
                 ],
-                "message": "Get characters successfully",
+                "message": "Get actors successfully",
                 "status": true
             }
 
     ### POST Enpoints
-        #### POST /scenes/add: Creates a new scene
+        #### POST /movies/add: Creates a new movie
         Sample response:
             {
-                "message": "Add scene successfully",
-                "scene": {
+                "message": "Add movie successfully",
+                "movie": {
                     "id": 3,
                     "duration": 231,
-                    "title": "add scene"
+                    "title": "add movie"
                 },
                 "status": true
             }
 
-        #### POST /characters/add: Creates a new character
+        #### POST /actors/add: Creates a new actor
         Sample response:
             {
-                "character": {
+                "actor": {
                     "role": "antagonist",
                     "id": 5,
-                    "scene_id": 1,
-                    "name": "character name"
+                    "movie_id": 1,
+                    "name": "actor name"
                 },
-                "message": "Add character successfully",
+                "message": "Add actor successfully",
                 "status": true
             }
 
     ### PATCH Enpoints
-        #### PATCH /scenes/<scene_id>/update : Updates scene information given a scene_id and newly updated attribute info.
+        #### PATCH /movies/<movie_id>/update : Updates movie information given a movie_id and newly updated attribute info.
         Sample response:
             {
-                "message": "Update scene successfully",
-                "scene": {
+                "message": "Update movie successfully",
+                "movie": {
                     "id": 1,
                     "duration": 444,
-                    "title": "update scene"
+                    "title": "update movie"
                 },
                 "status": true
             }
 
-        #### PATCH /characters/<character_id>/update : Updates character information given a character_id and newly updated attribute info.
+        #### PATCH /actors/<actor_id>/update : Updates actor information given a actor_id and newly updated attribute info.
         Sample response:
             {
-                "character": {
+                "actor": {
                     "role": "protagonist",
                     "id": 3,
-                    "scene_id": 1,
-                    "name": "update character"
+                    "movie_id": 1,
+                    "name": "update actor"
                 },
-                "message": "Update character successfully",
+                "message": "Update actor successfully",
                 "status": true
             }
 
     ### DELETE Enpoints
-        #### DELETE /scenes/<scene_id>/delete : Delete a scene entry from the database given the inputted scene_id.
+        #### DELETE /movies/<movie_id>/delete : Delete a movie entry from the database given the inputted movie_id.
         Sample response:
             {
-                "character_id": 3,
-                "message": "Delete character successfully",
+                "actor_id": 3,
+                "message": "Delete actor successfully",
                 "status": true
             }
 
-        #### DELETE /characters/<character_id>/delete : Delete an character / actress entry from the database given the inputted character_id.
+        #### DELETE /actors/<actor_id>/delete : Delete an actor / actress entry from the database given the inputted actor_id.
         Sample response:
             {
-                "message": "Delete scene successfully",
-                "scene_id": 3,
+                "message": "Delete movie successfully",
+                "movie_id": 3,
                 "status": true
             }
